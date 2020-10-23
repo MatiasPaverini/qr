@@ -2,6 +2,10 @@ import { Component, Output } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { LoginService } from "../services/login.service";
+import { QrService } from "../services/qr.service";
+import { PhotosService } from "../services/photos.service";
+import { UserService } from "../services/user.service";
+import { User } from '../class/user';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +15,16 @@ import { LoginService } from "../services/login.service";
 export class HomePage {
 
   @Output() title = 'Home';
-  constructor(private account: LoginService, private router: Router) {}
+
+  private user: User = new User("admin@dsgjslk", "admin");
+
+  constructor(private account: LoginService,
+    private router: Router,
+    private qrService: QrService,
+    private camera: PhotosService,
+    private userService: UserService) {
+    this.user = new User("admin@dsgjslk", "admin");
+  }
 
   logout() {
     this.account.logout().then(res => {
@@ -20,6 +33,27 @@ export class HomePage {
     }).catch(res => {
       console.log(res);
     });
+  }
+
+  clear() {
+    this.user.Credit = 0;
+    alert("Volvimos a 0.");
+  }
+
+
+  add() {
+    // alert("Cargando mucha plata.");
+    // this.credit += 100;
+
+    try {
+      this.camera.scan().then(barcodeData => {
+        let credit = this.qrService.add(barcodeData.text);
+        this.user.Credit += credit;
+      })
+    }
+    catch (err) {
+      alert(err);
+    }
   }
 
 }

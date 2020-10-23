@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { LoginService } from "../services/login.service";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginPage implements OnInit {
 
   flag:boolean;
 
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public loginService: LoginService, private router: Router, private UserService: UserService) { }
 
   ngOnInit() {}
 
@@ -48,6 +49,7 @@ export class LoginPage implements OnInit {
       console.log(res);
 
       this.message = "Registro exitoso.";
+      this.UserService.getSignedUser();
       this.router.navigate(['']);
 
     }).catch(res => {
