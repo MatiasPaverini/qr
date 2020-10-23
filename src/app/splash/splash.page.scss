@@ -1,0 +1,66 @@
+.container-home{
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+  }
+  
+  h1 {
+      font-family: 'Arima Madurai', cursive;
+      color: black;
+      font-size: 4rem;
+      letter-spacing: -3px;
+      text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+      position: relative;
+      z-index: 3;
+  }
+  
+  .container {
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // min-height: 100vh;
+      min-height: 35rem;
+      background-blend-mode: soft-light;
+      background-size: cover;
+      background-position: center center;
+      padding: 2rem;
+  }
+  
+  .splash {
+      background-image: url("../../assets/splash.png");
+      background-size: auto 100%;
+      width: 300px;
+      height: 300px;
+      will-change: background-position;
+      
+      animation-name: icon;
+      animation-duration: 1s;
+      animation-delay: -0.5s;
+      animation-timing-function: steps(10);
+      animation-iteration-count: infinite;
+  }
+  
+  .bird-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      will-change: transform;
+  }
+  
+  @keyframes icon {
+      
+      100% {
+          background-position: -3600px 0;
+      }
+      
+  }
