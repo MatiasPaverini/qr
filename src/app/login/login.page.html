@@ -27,8 +27,20 @@
   
   <br>
 
-  <ion-button (click)="fill()" id="admin1" expand="block" fill="outline" shape="round">
+  <ion-button (click)="admin()" id="admin1" expand="block" fill="outline" shape="round">
     ADMIN
+  </ion-button>
+  <ion-button (click)="invite()" id="admin1" expand="block" fill="outline" shape="round">
+    INVITADO
+  </ion-button>
+  <ion-button (click)="user()" id="admin1" expand="block" fill="outline" shape="round">
+    USUARIO
+  </ion-button>
+  <ion-button (click)="anon()" id="admin1" expand="block" fill="outline" shape="round">
+    ANONIMO
+  </ion-button>
+  <ion-button (click)="tester()" id="admin1" expand="block" fill="outline" shape="round">
+    TESTER
   </ion-button>
   
   <router-outlet></router-outlet>

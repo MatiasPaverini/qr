@@ -49,7 +49,6 @@ export class LoginPage implements OnInit {
       console.log(res);
 
       this.message = "Registro exitoso.";
-      this.UserService.getSignedUser();
       this.router.navigate(['']);
 
     }).catch(res => {
@@ -78,9 +77,29 @@ export class LoginPage implements OnInit {
   /**
    * fill
    */
-  public fill() {
+  public admin() {
     this.username = "admin@admin.com";
     this.password = "111111";
+  }
+
+  public anon() {
+    this.username = "anonimo@anonimo.com";
+    this.password = "444444";
+  }
+
+  public user() {
+    this.username = "usuario@usuario.com";
+    this.password = "333333";
+  }
+
+  public invite() {
+    this.username = "invitado@invitado.com";
+    this.password = "222222";
+  }
+
+  public tester() {
+    this.username = "tester@tester.com";
+    this.password = "555555";
   }
 
 
