@@ -79,8 +79,8 @@ export class LoginPage implements OnInit {
    * fill
    */
   public fill() {
-    this.username = "user1@example.com";
-    this.password = "user1234";
+    this.username = "admin@admin.com";
+    this.password = "111111";
   }
 
 

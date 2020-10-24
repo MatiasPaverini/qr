@@ -38,12 +38,7 @@ export class User {
         this.credit = v;
     }
     
-    /**
-     * userJSON
-     */
-    public userJSON() {
-        return {"email": this.Email, "type": this.Type, "credit": this.Credit};
-    }
+    
     
     
 }
