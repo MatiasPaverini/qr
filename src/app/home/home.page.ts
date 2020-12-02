@@ -1,10 +1,10 @@
 import { Component, Output } from '@angular/core';
 import { Router } from "@angular/router";
 
-import { LoginService } from "../service/login.service";
-import { StorageService } from "../service/qr.service";
-import { PhotosService } from "../service/photos.service";
-import { UserService } from "../service/user.service";
+import { LoginService } from "../services/login.service";
+import { StorageService } from "../services/qr.service";
+import { PhotosService } from "../services/photos.service";
+import { UserService } from "../services/user.service";
 import { User } from '../class/user';
 
 @Component({

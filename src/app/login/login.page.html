@@ -1,4 +1,4 @@
-<app-header [title]="title"></app-header>
+<!-- <app-header [title]="title"></app-header>
 
 <ion-content>
 
@@ -45,4 +45,75 @@
   
   <router-outlet></router-outlet>
 
-</ion-content>
+</ion-content> -->
+
+
+
+
+<!-- <app-header [title]="title"></app-header> -->
+
+<body class="centrado">
+
+  <div id="container">
+
+    <ion-card class="ion-text-center card" style="margin: 5%;">
+      <ion-card-header class="headercard">
+        <ion-card-title class="titlecard">INGRESO A LA APP</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <img src="../../assets/qrMano.png" class="shake-lr" width="70%" style="margin: 2%;" alt="">
+
+        <div class="form-group row">
+          <ion-item style="margin-bottom: 8%;">
+            <ion-label position="floating">E-Mail</ion-label>
+            <ion-input type="text" id="email" autocomplete="email" autofocus=true placeholder='email@example.com' [(ngModel)]="username" required=true></ion-input>
+          </ion-item>
+
+        </div>
+
+        <div class="form-group row">
+          <ion-item style="margin-bottom: 8%;">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" id="pass" autocomplete="current-password" placeholder='password' (keydown.enter) = "submit()" [(ngModel)]="password" required=true></ion-input>
+          </ion-item>
+
+        </div>
+
+        <div class="form-group row">
+          <ion-button style="margin-bottom: 5%;" (click)="register()" expand="block" color="danger">
+            Registrar
+          </ion-button>
+          <ion-button style="margin-bottom: 5%;" (click)="login()" expand="block" color="success">
+            Ingresar
+          </ion-button>
+  
+          </div>
+
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="admin()" fill="outline" shape="round" id="admin1" color="primary">
+      ADM
+    </ion-button>
+    <ion-button (click)="invite()" fill="outline" shape="round" id="admin1" color="secondary">
+      INV
+    </ion-button>
+    <ion-button (click)="user()" fill="outline" shape="round" id="admin1" color="primary">
+      USU
+    </ion-button>
+    <ion-button (click)="anon()" fill="outline" shape="round" id="admin1" color="secondary">
+      ANON
+    </ion-button>
+    <ion-button (click)="tester()" fill="outline" shape="round" id="admin1" color="primary">
+      TEST
+    </ion-button> 
+
+
+  </div>
+
+</body>
+
+
+<router-outlet></router-outlet>
